@@ -23,6 +23,7 @@ int main() {
 	}
 }
 LRESULT CALLBACK MouseProc(int nCode, WPARAM wParam, LPARAM lParam) {
+	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 	if (nCode >= 0 && wParam == WM_XBUTTONDOWN) {
 		MSLLHOOKSTRUCT* msllStruct = reinterpret_cast<MSLLHOOKSTRUCT*>(lParam);
 		int button = HIWORD(msllStruct->mouseData);
